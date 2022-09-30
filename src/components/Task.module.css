@@ -1,0 +1,45 @@
+.taskGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+  background: var(--gray-500);
+  color: var(--gray-100);
+  border: 1px solid var(--gray-400);
+  border-radius: 8px;
+}
+
+.taskGroup p {
+  width: 100%;
+}
+
+.checkButton {
+  background: transparent;
+  border: 0;
+  color: var(--blue);
+  cursor: pointer;
+}
+
+.checkedButton {
+  background: transparent;
+  border: 0;
+  color: var(--purple-dark);
+  cursor: pointer;
+}
+
+.trashButton {
+  background: transparent;
+  border: 0;
+  color: var(--gray-300);
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 0.5rem;
+}
+
+.trashButton:hover {
+  background: var(--gray-400);
+  border: 0;
+  color: var(--danger);
+}

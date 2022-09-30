@@ -1,0 +1,103 @@
+.wrapper {
+  max-width: 52rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: calc(0px - 1.5rem);
+  gap: 3rem;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+.taskInput {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  height: 54px;
+}
+
+.taskInput input {
+  width: 100%;
+  display: flex;
+  background: var(--gray-500);
+  border: 0;
+  border: 1px solid var(--gray-700);
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--gray-300);
+}
+
+.taskInput input:focus {
+  outline: 1px solid var(--purple-dark);
+}
+
+.button {
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 8px;
+  height: 100%;
+  width: 5.625rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--blue);
+}
+
+.tasks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tasksInfoGroup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tasksInfo {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.tasksInfoCreatedText {
+  color: var(--blue);
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.tasksInfoCompletedText {
+  color: var(--purple);
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.counter {
+  background: var(--gray-400);
+  color: var(--gray-200);
+  border-radius: 999px;
+  padding: 0.125rem 0.5rem;
+}
+
+.tasksSchedule {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
