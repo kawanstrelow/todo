@@ -13,12 +13,12 @@ function App() {
     {
       id: uuidv4(),
       isChecked: false,
-      taskText: 'Primeiro',
+      taskText: 'Fazer academia 08h30',
     },
     {
       id: uuidv4(),
       isChecked: false,
-      taskText: 'Segundo',
+      taskText: 'Terminar o trabalho da faculdade',
     },
   ];
 
@@ -36,6 +36,7 @@ function App() {
     const newArray = tasks.map(a => {
       if (a === objFinded[0]) {
         a.isChecked = !a.isChecked;
+
         return a;
       } else {
         return a;
@@ -58,7 +59,23 @@ function App() {
   }
 
   const completedTasks = tasks.filter(a => a.isChecked === true);
-
+  const contentToShowEmptyOrFilled =
+    tasks.length === 0 ? (
+      <EmptyTasks />
+    ) : (
+      <div className={styles.tasksSchedule}>
+        {tasks.map(task => (
+          <Task
+            key={task.id}
+            id={task.id}
+            taskText={task.taskText}
+            isChecked={task.isChecked}
+            deleteTask={() => deleteTaskApp(task.id)}
+            toggleCheckButton={() => toggleCheckButtonApp(task.id)}
+          />
+        ))}
+      </div>
+    );
   return (
     <div className="App">
       <Header />
@@ -90,19 +107,7 @@ function App() {
               >{`${completedTasks.length} de ${tasks.length} `}</span>
             </div>
           </div>
-          <div className={styles.tasksSchedule}>
-            {/* <EmptyTasks /> */}
-            {tasks.map(task => (
-              <Task
-                key={task.id}
-                id={task.id}
-                taskText={task.taskText}
-                isChecked={task.isChecked}
-                deleteTask={() => deleteTaskApp(task.id)}
-                toggleCheckButton={() => toggleCheckButtonApp(task.id)}
-              />
-            ))}
-          </div>
+          {contentToShowEmptyOrFilled}
         </div>
       </div>
     </div>

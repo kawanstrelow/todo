@@ -29,7 +29,14 @@ export function Task({
         </button>
       )}
 
-      <p>{taskText}</p>
+      {isChecked === false ? (
+        <p>{taskText}</p>
+      ) : (
+        <p>
+          <s>{taskText}</s>
+        </p>
+      )}
+
       <button className={styles.trashButton} onClick={deleteTask}>
         <Trash size={24} />
       </button>
